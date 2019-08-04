@@ -9,7 +9,6 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Running build automation'
-                sh 'npm install -g mocha'
                 sh './gradlew build --no-daemon'
                 archiveArtifacts artifacts: 'dist/trainSchedule.zip'
             }
